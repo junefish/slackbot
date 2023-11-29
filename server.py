@@ -1,3 +1,4 @@
+from dotenv import load_dotenv
 import os
 import json
 import logging
@@ -46,6 +47,7 @@ def command():
 
 # Start the Flask server
 if __name__ == "__main__":
+  load_dotenv()
   SLACK_BOT_TOKEN = os.environ['SLACK_BOT_TOKEN']
   SLACK_SIGNATURE = os.environ['SLACK_SIGNATURE']
   slack_client = WebClient(SLACK_BOT_TOKEN)
